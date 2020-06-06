@@ -4,8 +4,8 @@ from flask import Flask, jsonify, request
 
 
 # Setup Broker & Topic
-broker_url = os.environ.get('broker_url', '')
-topic = os.environ.get('topic', '')
+broker_url = os.environ.get('BROKER_URL', '')
+topic = os.environ.get('TOPIC', '')
 
 
 # Create Flask app
@@ -44,4 +44,4 @@ def produce_message():
 
 # If this file is run directly, start the dev server
 if __name__ == '__main__': 
-    app.run(debug=True, port=5000, host='0.0.0.0')
+    app.run(debug=True, port=8080, host='0.0.0.0')

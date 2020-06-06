@@ -9,10 +9,10 @@ build:
 	docker build --rm -t $(APP_NAME):latest .
 
 run:
-	docker run    --env broker_url=$(BROKER) --env topic=$(TOPIC) -p $(PORT):8080 --name $(APP_NAME) $(APP_NAME)
+	docker run    --env BROKER_URL=$(BROKER) --env TOPIC=$(TOPIC) -p $(PORT):8080 --name $(APP_NAME) $(APP_NAME)
 
 run-detached:
-	docker run -d --env broker_url=$(BROKER) --env topic=$(TOPIC) -p $(PORT):8080 --name $(APP_NAME) $(APP_NAME)
+	docker run -d --env BROKER_URL=$(BROKER) --env TOPIC=$(TOPIC) -p $(PORT):8080 --name $(APP_NAME) $(APP_NAME)
 
 attach:
 	docker attach $(APP_NAME)
